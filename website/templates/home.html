@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}
+Home page
+{% endblock title %}
+{% block body %}
+<h2 align="center"> Enter your news to check its authenticity</h2>
+<form class="w-75 m-auto" method="post" action="/">
+    <p class="mt-4"><span class="required">*</span> denotes required information</p>
+    <div class="mb-3">
+      <label for="news-title" class="form-label">News Title</label>
+      <input type="text" class="form-control" name ='news-title' id="news-title" aria-describedby="newsHelp">
+      <div id="newsHelp" class="form-text">Please enter the title. Leave blank if unknown.</div>
+    </div>
+    <div class="mb-3">
+      <label for="publisher" class="form-label">Publisher name</label>
+      <input type="text" class="form-control" name="publisher" id="publisher">
+    </div>
+    <div class="mb-3">
+      <label for="news-text" class="form-label">News-text <span class="required">*</span></label>
+      <input type="text" name="news-text" class="form-control" id="news-text" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock body %}
