@@ -14,9 +14,9 @@ def preProcess(text):
     text = [ps.stem(word) for word in text if word not in stopwords.words('english') and len(word)>=2 and word!='said' and word!='one']
     return ' '.join(text)
 
-model = load_model('/home/pridroger/machineLearning/FakeNews/lstm')
+model = load_model('lstm')
 
-with open('/home/pridroger/machineLearning/FakeNews/tokenizerD1.pickle', 'rb') as handle:
+with open('tokenizerD1.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 def predict(title,text,maxlen):
