@@ -3,5 +3,15 @@
     Results
 {% endblock title %}
 {% block body %}
-    Result is {% if result==0 %}False{% else %}True{% endif %}
+    <!-- Result is {% if result==0 %}False{% else %}True {{result}}{% endif %} -->
+    <div class="px-4 py-5 my-5 text-center">
+        <h1 class="display-5 fw-bold text-body-emphasis">Result</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">The model predicts that your news:"{{title}} " is <br><span class="required">{% if result==0 %}False{% else %}True {{result}}{% endif %}</span></p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-primary btn-lg px-4 gap-3" onclick="addResult('{{title}}','{{result}}')">Save this result</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4"><a href="{{ url_for('views.home')    }}" style="text-decoration: none; color: black;">Home</a></button>
+          </div>
+        </div>
+      </div>
 {% endblock body %}

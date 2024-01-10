@@ -29,7 +29,7 @@ def login():
 def signup():
     if request.method=='POST':
         email = request.form.get('email')
-        first_name = request.form.get('first_name')
+        first_name = request.form.get('firstName')
         password = request.form.get('password1')
         password2 = request.form.get('password2')
         if(password!=password2):
